@@ -1,0 +1,8 @@
+<h1><%= @flat.name %></h1>
+<p><%= @flat.address %></p>
+<p><%= @flat.description %></p>
+<p><%= @flat.price_per_night %> € per night</p>
+<p><%= @flat.number_of_guests %> guests</p>
+<a href="<%= edit_flat_path(@flat) %>" class="btn btn-primary">Edit</a>
+<a href="<%= flats_path %>" class="btn btn-secondary">Back to flats</a>
+<%= image_tag @flat.picture_url if @flat.picture_url.present? %>

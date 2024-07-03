@@ -1,0 +1,17 @@
+<h1>All our Flats</h1>
+<div class="row">
+  <% @flats.each do |flat| %>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <%= image_tag flat.picture_url, class: 'card-img-top' if flat.picture_url.present? %>
+          <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"><%= flat.address %></p>
+          <p class="card-text"><%= flat.price_per_night %> € per night</p>
+          <p class="card-text"><%= flat.number_of_guests %> guests</p>
+          <a href="<%= flat_path(flat) %>" class="btn btn-primary">More info</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
